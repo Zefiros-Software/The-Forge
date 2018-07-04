@@ -23,8 +23,8 @@
 --
 -- @endcond
 -- ]]
-workspace "Json"
-    zefiros.testDefinition("Json")
+workspace "The-Forge"
+    zefiros.testDefinition("The-Forge")
 
-    project "Json"
-        zpm.uses "Zefiros-Software/Json"
+    project "The-Forge"
+        zpm.uses "Zefiros-Software/The-Forge"

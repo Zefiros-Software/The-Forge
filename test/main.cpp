@@ -23,17 +23,20 @@
  *
  * @endcond
  */
-#include "nlohmann/json.hpp"
+#include "Common_3/OS/Image/Image.h"
+#include "Common_3/OS/Image/ImageEnums.h"
 
 #include "gtest/gtest.h"
 
 #include <stdint.h>
 
-using json = nlohmann::json;
-
 TEST(Test, Example)
 {
-    EXPECT_EQ("{\"theMeaningOfLife\":42}", json({ {"theMeaningOfLife", 42} }).dump());
+    Image image;
+    image.create( ImageFormat::Enum::R8, 1024, 1024, 1, 1, 1);
+    
+    EXPECT_EQ(1024, image.GetWidth());
+    EXPECT_EQ(1024, image.GetHeight());
 }
 
 int main(int argc, char **argv)

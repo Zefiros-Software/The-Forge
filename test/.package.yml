@@ -1,6 +1,6 @@
 libraries:
-  - name: Zefiros-Software/Json
-    version: '^3.0.0'
+  - name: Zefiros-Software/The-Forge
+    version: '@head'
     definition: ../
 modules:
   - name: Zefiros-Software/Defaults
