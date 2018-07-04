@@ -23,8 +23,8 @@
  *
  * @endcond
  */
-#include "Common_3/OS/Image/Image.h"
-#include "Common_3/OS/Image/ImageEnums.h"
+#include "OS/Image/Image.h"
+#include "OS/Image/ImageEnums.h"
 
 #include "gtest/gtest.h"
 

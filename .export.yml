@@ -1,13 +1,36 @@
 %YAML 1.1
 ---
-version: '>=0.0.0'
+version: '>=0.0.0 || @head'
 export: |
 
-    project "Json"
+    project "The-Forge"
         kind "StaticLib"
 
+        files { "Common_3/**.cpp",
+                "Common_3/**.c"}
+                
+         
+        filter "system:macosx"
+            files { 
+                "Common_3/OS/macOS/*.m",
+                "Common_3/OS/macOS/*.mm"
+            }    
+        filter {}
+        
+        
+        
         zpm.export [[
-            includedirs "include"
+            includedirs "Common_3"
             cppdialect "C++11"
+            
+            if zpm.setting("renderer") == "d3d12" then
+                defines "DIRECT3D12"
+                
+            elseif zpm.setting("renderer") == "metal" then
+                defines "METAL"
+                
+            elseif zpm.setting("renderer") == "vulkan" then
+                defines "VULKAN"
+            end
         ]]
 ...
