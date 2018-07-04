@@ -1,0 +1,24 @@
+sudo: required
+language: generic
+matrix:
+  include:
+  - os: linux
+    dist: trusty
+    env: VERSION=6
+  - os: linux
+    dist: trusty
+    env: VERSION=7
+  - os: osx
+    osx_image: xcode9.2
+    language: generic
+global:
+  env:
+  - PROJECT=Json
+  - PROJECT_TEMPLATE=default
+install:
+- source /dev/stdin <<< "$(curl -s https://raw.githubusercontent.com/Zefiros-Software/ZPM/dev/script/install-zpm.sh)"
+script:
+- cd test && zpm run test-definition Json
+notifications:
+  slack:
+    secure: fIc+J+5CCF5aTZUyJrv6/p76nx3GMpUcrQ1Wse3SsXLdM8TY/br8UCNtqP1XLweFisovzaPvL3jBnpiJMaWmgL+vFZz/1+9zFzoDsMt3a5fgw/NgEr8YYhKOR9ur9nJUMFzcpc+Ysr0/8ar42knzYj+4+NewcT/RrTAP5AXW76tEWFrkBJYCA6hUzZKOuz9F9yePncDRqUL+WHixVoXFrR30pRsgGBnPomAlj8sQjVEHujYl1esfUr6qmy8wnURobhBYM7Q25HrqgrzGMnoyyx/WaCd/dYT1xlBMMsyDQE93Qo0k2lKnF7c/OIGvFXAuJTDzLehXXMPcGR/loEYnrkxijBhDC0snmT50iquuazFAtbLRZ2er8Wd5mcfr6BVvefFjhqhcjih7aCT1ke2CI/1WtcNzTqrdNPJOpIBSRdj/uparo/2zZLCaWl/7Tjts0g3/W2aiZha5pVGZFzHH0QTwDVCCI0ohoIKBiquH0KCZVBx0/1ZQ0BzKe27Csp3HT0/rSJMlmZ+pyypCvQMc+wwt78NZcthS5GhFAAk0pyl/cI3WV4LZxM3npsreyAi2ChRRiGLxjY5r1ehDHa5sRcAl9YrEsmvtyWKNmZN5Ua6f6xYcvprj70hjWLJoPv/c6wKYm7maV28aJ5j80qGMaGK3IrJjXMKE5i43RphdqM4=

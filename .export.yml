@@ -1,0 +1,13 @@
+%YAML 1.1
+---
+version: '>=0.0.0'
+export: |
+
+    project "Json"
+        kind "StaticLib"
+
+        zpm.export [[
+            includedirs "include"
+            cppdialect "C++11"
+        ]]
+...
