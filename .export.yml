@@ -6,8 +6,9 @@ export: |
     project "The-Forge"
         kind "StaticLib"
 
-        files { "Common_3/**.cpp",
-                "Common_3/**.c"}
+        files { "Common_3/OS/**.cpp",
+                "Common_3/Renderer/**.cpp",
+                "Common_3/Tools/**.cpp"}
                 
          
         filter "system:macosx"
