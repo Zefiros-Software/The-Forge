@@ -33,7 +33,7 @@
 TEST(Test, Example)
 {
     Image image;
-    image.create( ImageFormat::Enum::R8, 1024, 1024, 1, 1, 1);
+    image.Create( ImageFormat::Enum::R8, 1024, 1024, 1, 1, 1);
     
     EXPECT_EQ(1024, image.GetWidth());
     EXPECT_EQ(1024, image.GetHeight());

@@ -6,16 +6,25 @@ export: |
     project "The-Forge"
         kind "StaticLib"
 
-        files { "Common_3/OS/**.cpp",
-                "Common_3/Renderer/**.cpp",
-                "Common_3/Tools/**.cpp"}
+        files { "Common_3/OS/Camera/**",
+                "Common_3/OS/Core/**",
+                "Common_3/OS/Image/**",
+                "Common_3/OS/Interfaces/**",
+                "Common_3/OS/Logging/**",
+                "Common_3/OS/Math/**",
+                "Common_3/OS/MemoryTracking/**",
+                "Common_3/Renderer/**"}
                 
-         
+
+        filter "system:windows"        
+            files "Common_3/OS/Windows/**"  
+            
+        filter "system:linux"      
+            files "Common_3/OS/Linux/**"  
+            
         filter "system:macosx"
-            files { 
-                "Common_3/OS/macOS/*.m",
-                "Common_3/OS/macOS/*.mm"
-            }    
+            files "Common_3/OS/macOS/**"  
+            
         filter {}
         
         
