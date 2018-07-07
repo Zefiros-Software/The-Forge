@@ -5,7 +5,3 @@ libraries:
 modules:
   - name: Zefiros-Software/Defaults
     version: '@head'
-settings:
-  renderer:
-    default: backend
-    reduce: first

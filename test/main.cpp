@@ -30,11 +30,15 @@
 
 #include <stdint.h>
 
+const char *pszRoots[FSR_Count] =
+{
+};
+
 TEST(Test, Example)
 {
     Image image;
-    image.Create( ImageFormat::Enum::R8, 1024, 1024, 1, 1, 1);
-    
+    image.Create(ImageFormat::Enum::R8, 1024, 1024, 1, 1, 1);
+
     EXPECT_EQ(1024, image.GetWidth());
     EXPECT_EQ(1024, image.GetHeight());
 }

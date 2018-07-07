@@ -6,24 +6,30 @@ export: |
     project "The-Forge"
         kind "StaticLib"
 
-        files { "Common_3/OS/Camera/**",
-                "Common_3/OS/Core/**",
-                "Common_3/OS/Image/**",
-                "Common_3/OS/Interfaces/**",
-                "Common_3/OS/Logging/**",
-                "Common_3/OS/Math/**",
-                "Common_3/OS/MemoryTracking/**",
-                "Common_3/Renderer/**"}
+        files { 
+            "Common_3/OS/Camera/**.cpp",
+            "Common_3/OS/Core/**.cpp",
+            "Common_3/OS/Image/**.cpp",
+            "Common_3/OS/Interfaces/**.cpp",
+            "Common_3/OS/Logging/**.cpp",
+            "Common_3/OS/Math/**.cpp",
+            "Common_3/OS/MemoryTracking/**.cpp",
+            "Common_3/Renderer/**.cpp",
+            "Common_3/ThirdParty/OpenSource/TinyEXR/**.cpp"
+        }
                 
 
         filter "system:windows"        
-            files "Common_3/OS/Windows/**"  
+            files "Common_3/OS/Windows/**.cpp"  
             
         filter "system:linux"      
-            files "Common_3/OS/Linux/**"  
+            files "Common_3/OS/Linux/**.cpp"  
             
         filter "system:macosx"
-            files "Common_3/OS/macOS/**"  
+            files {
+                "Common_3/OS/macOS/**.cpp",
+                "Common_3/OS/macOS/**.mm"
+            }
             
         filter {}
         
@@ -32,14 +38,27 @@ export: |
         zpm.export [[
             includedirs "Common_3"
             cppdialect "C++11"
+
+            local backend = zpm.setting("backend")
+            if not backend then
+                if os.istarget("windows") == "d3d12" then
+                    backend =  "d3d12"
+                    
+                elseif os.istarget("macosx") == "metal" then
+                    backend = "metal"
+                    
+                elseif os.istarget("linux") == "vulkan" then
+                    backend = "vulkan"
+                end
+            end
             
-            if zpm.setting("renderer") == "d3d12" then
+            if backend == "d3d12" then
                 defines "DIRECT3D12"
                 
-            elseif zpm.setting("renderer") == "metal" then
+            elseif backend == "metal" then
                 defines "METAL"
                 
-            elseif zpm.setting("renderer") == "vulkan" then
+            elseif backend == "vulkan" then
                 defines "VULKAN"
             end
         ]]

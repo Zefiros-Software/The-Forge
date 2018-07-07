@@ -13,12 +13,12 @@ matrix:
     language: generic
 global:
   env:
-  - PROJECT=Json
+  - PROJECT=The-Forge
   - PROJECT_TEMPLATE=default
 install:
 - source /dev/stdin <<< "$(curl -s https://raw.githubusercontent.com/Zefiros-Software/ZPM/dev/script/install-zpm.sh)"
 script:
-- cd test && zpm run test-definition Json
+- cd test && zpm run test-definition The-Forge
 notifications:
   slack:
-    secure: fIc+J+5CCF5aTZUyJrv6/p76nx3GMpUcrQ1Wse3SsXLdM8TY/br8UCNtqP1XLweFisovzaPvL3jBnpiJMaWmgL+vFZz/1+9zFzoDsMt3a5fgw/NgEr8YYhKOR9ur9nJUMFzcpc+Ysr0/8ar42knzYj+4+NewcT/RrTAP5AXW76tEWFrkBJYCA6hUzZKOuz9F9yePncDRqUL+WHixVoXFrR30pRsgGBnPomAlj8sQjVEHujYl1esfUr6qmy8wnURobhBYM7Q25HrqgrzGMnoyyx/WaCd/dYT1xlBMMsyDQE93Qo0k2lKnF7c/OIGvFXAuJTDzLehXXMPcGR/loEYnrkxijBhDC0snmT50iquuazFAtbLRZ2er8Wd5mcfr6BVvefFjhqhcjih7aCT1ke2CI/1WtcNzTqrdNPJOpIBSRdj/uparo/2zZLCaWl/7Tjts0g3/W2aiZha5pVGZFzHH0QTwDVCCI0ohoIKBiquH0KCZVBx0/1ZQ0BzKe27Csp3HT0/rSJMlmZ+pyypCvQMc+wwt78NZcthS5GhFAAk0pyl/cI3WV4LZxM3npsreyAi2ChRRiGLxjY5r1ehDHa5sRcAl9YrEsmvtyWKNmZN5Ua6f6xYcvprj70hjWLJoPv/c6wKYm7maV28aJ5j80qGMaGK3IrJjXMKE5i43RphdqM4=
+    secure: pOi4mGLXQ4dA9ty3qXFie8A00TlnpyRb8Ca92kZM38n67+N6k7YOttz4WQL1+IB5Qcy9CgrTS0+SMlocPzlCGCy/Rve/F4lwK8GQ9wHyapOtRqH+dVSB55+ma7LxAtmYYJ03r7HAsVfm4XcaE+qICJK2tMucYRBdMdwQ9G+mDd9wrIfWYuEiF/qUBCDRRnRgB75PTilGgd+BdI/7/PFDGLsIqcAVCYzgSbBP35SwaS9fxjV7LqPB1+E77Qb52t4RxJ89xeeIaPA6ZhBYia2ibWAhSmN5lXHsvxxM+jbSXuYCGsx7xcsl2hNI5DGsFymrdN80N+2RfsQnPGfI6o00P+4PE+wJCCkrWA2XpAYNayCgl0RE7RdKKTu7T6GA/5L+f93aqHcZw7LB1S6q8Xm2waA9c2LG9eaiTgEFxfYjH5BkB95J83C+gvKjDMb/QrxDjY/zlktec6T/PyL6gscJcPYOTw/PAwddlY1h0HF8dg/82urKq9dOBm+LbuozqWDFofrH1WOV5oiFjwWakbXiUE6+6MbCyUS7O/NvBGv6z7Itg6qbf5+BMigX1ehZEIc0m2uTj0A6fTfWtmsRdIBPaBmqwaPSy1cgmjCAN22pGdFCCHIKF8hximhQ4LWamROgXAqgrKDWXVacG7rtZxZDJfBHLdjRcVdJidg9pUEQiiw=
