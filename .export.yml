@@ -34,9 +34,7 @@ export: |
             }
             
         filter {}
-        
-        
-        
+    
         zpm.export [[
             includedirs "Common_3"
             cppdialect "C++11"
@@ -63,5 +61,12 @@ export: |
             elseif backend == "vulkan" then
                 defines "VULKAN"
             end
+
+            filter {"system:windows", "kind:not SharedLib or not StaticLib"}
+                postbuildcommands {
+                    string.format("{COPY} \"%s/winpix/bin/WinPixEventRuntime.dll\" \"%%{cfg.buildtarget.directory}\"", zpm.exportpath())
+                }
+
+            filter {}
         ]]
 ...
