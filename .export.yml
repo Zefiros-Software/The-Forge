@@ -41,13 +41,13 @@ export: |
 
             local backend = zpm.setting("backend")
             if not backend then
-                if os.istarget("windows") == "d3d12" then
+                if os.istarget("windows") then
                     backend =  "d3d12"
                     
-                elseif os.istarget("macosx") == "metal" then
+                elseif os.istarget("macosx") then
                     backend = "metal"
                     
-                elseif os.istarget("linux") == "vulkan" then
+                elseif os.istarget("linux") then
                     backend = "vulkan"
                 end
             end

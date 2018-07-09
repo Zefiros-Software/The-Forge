@@ -1,4 +1,4 @@
 settings:
   backend:
-    default: null
+    default:
     reduce: first
