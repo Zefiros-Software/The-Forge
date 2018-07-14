@@ -17,7 +17,8 @@ export: |
             "Common_3/Renderer/**.cpp",
             "Common_3/ThirdParty/OpenSource/TinyEXR/**.cpp",
             "Middleware_3/UI/**.cpp",
-            "Middleware_3/Text/**.cpp"
+            "Middleware_3/Text/**.cpp",
+            "Middleware_3/Input/**.cpp"
         }
                 
 
