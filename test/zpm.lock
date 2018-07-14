@@ -4,7 +4,7 @@
   "private": {
     "libraries": [ {
       "definition": "../",
-      "hash": "6226887b4945e26fadc565d55b5f535121c99c16",
+      "hash": "d3d89b50f2d6308ce4e065b7d9c5e7d0b131e466",
       "name": "Zefiros-Software/The-Forge",
       "repository": "https://github.com/ConfettiFX/The-Forge.git",
       "tag": "HEAD",
@@ -12,19 +12,19 @@
     } ],
     "modules": [ {
       "definition": "https://github.com/Zefiros-Software/ZefirosDefaults.git",
-      "hash": "66cac4a6aa7f109e0fb8ce9daaac9f4330307b46",
+      "hash": "51084b643604be592031efcf31127207f122525f",
       "name": "Zefiros-Software/Defaults",
       "public": {
         "libraries": [ {
           "definition": "https://github.com/Zefiros-Software/GoogleTest.git",
-          "hash": "ba96d0b1161f540656efdaed035b3c062b60e006",
+          "hash": "b4d4438df9479675a632b2f11125e57133822ece",
           "name": "Zefiros-Software/GoogleTest",
           "repository": "https://github.com/google/googletest.git",
           "tag": "HEAD",
           "versionRequirement": "@head || ^1.0.0"
         }, {
           "definition": "https://github.com/Zefiros-Software/GoogleBenchmark.git",
-          "hash": "5946795e82f778fff891c37f56c0d7a76a118bf9",
+          "hash": "1f35fa4aa71bffb5e5672f7ca876561d6adef4fd",
           "name": "Zefiros-Software/GoogleBenchmark",
           "repository": "https://github.com/google/benchmark.git",
           "tag": "HEAD",

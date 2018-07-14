@@ -20,9 +20,11 @@ export: |
                 
 
         filter "system:windows"        
-            files "Common_3/OS/Windows/**.cpp"
+            files "Common_3/OS/Windows/Windows*.cpp"
 
-            linksfiles "winpix/bin/WinPixEventRuntime"
+            removefiles "Common_3/OS/Windows/WindowsBase.cpp"
+
+            --linksfiles "winpix/bin/WinPixEventRuntime"
             
         filter "system:linux"      
             files "Common_3/OS/Linux/**.cpp"  
