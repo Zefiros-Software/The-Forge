@@ -27,7 +27,7 @@ export: |
             files "Common_3/OS/Windows/Windows*.cpp"
 
             defines "_WINDOWS"
-            --linksfiles "winpix/bin/WinPixEventRuntime"
+            linksfiles "winpix/bin/WinPixEventRuntime"
             
         filter "system:linux"      
             files "Common_3/OS/Linux/**.cpp"  
