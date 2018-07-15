@@ -34,7 +34,7 @@ export: |
             defines "_WINDOWS"
             linksfiles {
                 "winpix/bin/WinPixEventRuntime",
-                "Common_3/ThirdParty/OpenSource/assimp/4.1.0/win64"
+                "Common_3/ThirdParty/OpenSource/assimp/4.1.0/win64/assimp"
             }
             
         filter "system:linux"      
@@ -42,7 +42,7 @@ export: |
 
             defines "LINUX"
             linksfiles {
-                "Common_3/ThirdParty/OpenSource/assimp/4.1.0/linux"
+                "Common_3/ThirdParty/OpenSource/assimp/4.1.0/linux/assimp"
             }
             
         filter "system:macosx"
@@ -52,7 +52,7 @@ export: |
             }
             
             linksfiles {
-                "Common_3/ThirdParty/OpenSource/assimp/4.1.0/macOS-build"
+                "Common_3/ThirdParty/OpenSource/assimp/4.1.0/macOS-build/assimp"
             }
         
         filter"action:vs*"
