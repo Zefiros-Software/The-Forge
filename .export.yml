@@ -23,8 +23,9 @@ export: |
             "Middleware_3/Text/**.cpp",
             "Middleware_3/Input/**.cpp"
         }
-                
-
+        
+        includedirs {"Common_3/ThirdParty/OpenSource/assimp/4.1.0/include"}
+        
         filter "system:windows"        
             files "Common_3/OS/Windows/Windows*.cpp"
 
