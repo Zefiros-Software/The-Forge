@@ -15,6 +15,8 @@ export: |
             "Common_3/OS/Math/**.cpp",
             "Common_3/OS/MemoryTracking/**.cpp",
             "Common_3/Renderer/**.cpp",
+            "Common_3/Tools/AssimpImporter/**.cpp",
+            "Common_3/ThirdParty/OpenSource/assimp/4.1.0/code/**.cpp",
             "Common_3/ThirdParty/OpenSource/TinyEXR/**.cpp",
             "Common_3/ThirdParty/OpenSource/gainput/lib/**.cpp",
             "Middleware_3/UI/**.cpp",
