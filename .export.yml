@@ -50,7 +50,10 @@ export: |
                 "Common_3/OS/macOS/**.cpp",
                 "Common_3/OS/macOS/**.mm"
             }
-            
+        
+        filter"action:vs*"
+            buildoptions {  "/bigobj" }
+      
         filter {}
     
         zpm.export [[
