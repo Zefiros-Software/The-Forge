@@ -16,11 +16,6 @@ export: |
             "Common_3/OS/MemoryTracking/**.cpp",
             "Common_3/Renderer/**.cpp",
             "Common_3/Tools/AssimpImporter/**.cpp",
-            "Common_3/ThirdParty/OpenSource/assimp/4.1.0/code/**.cpp",
-            --"Common_3/ThirdParty/OpenSource/assimp/4.1.0/contrib/zlib/*.c",
-            --"Common_3/ThirdParty/OpenSource/assimp/4.1.0/contrib/unzip/*.c",
-            "Common_3/ThirdParty/OpenSource/assimp/4.1.0/contrib/irrXML/**.cpp",
-            "Common_3/ThirdParty/OpenSource/assimp/4.1.0/contrib/openddlparser/code/**.cpp",
             "Common_3/ThirdParty/OpenSource/TinyEXR/**.cpp",
             "Common_3/ThirdParty/OpenSource/gainput/lib/**.cpp",
             "Middleware_3/UI/**.cpp",
@@ -28,27 +23,36 @@ export: |
             "Middleware_3/Input/**.cpp"
         }
         
-        includedirs {"Common_3/ThirdParty/OpenSource/assimp/4.1.0/",
-                     "Common_3/ThirdParty/OpenSource/assimp/4.1.0/include",
-                     --"Common_3/ThirdParty/OpenSource/assimp/4.1.0/contrib/zlib/",
-                     "Common_3/ThirdParty/OpenSource/assimp/4.1.0/contrib/irrXML/",
-                     "Common_3/ThirdParty/OpenSource/assimp/4.1.0/contrib/openddlparser/include"}
+        includedirs {
+            "Common_3/ThirdParty/OpenSource/assimp/4.1.0/",
+            "Common_3/ThirdParty/OpenSource/assimp/4.1.0/include"
+        }
         
         filter "system:windows"        
             files "Common_3/OS/Windows/Windows*.cpp"
 
             defines "_WINDOWS"
-            linksfiles "winpix/bin/WinPixEventRuntime"
+            linksfiles {
+                "winpix/bin/WinPixEventRuntime",
+                "Common_3/ThirdParty/OpenSource/assimp/4.1.0/win64"
+            }
             
         filter "system:linux"      
             files "Common_3/OS/Linux/**.cpp"  
 
             defines "LINUX"
+            linksfiles {
+                "Common_3/ThirdParty/OpenSource/assimp/4.1.0/linux"
+            }
             
         filter "system:macosx"
             files {
                 "Common_3/OS/macOS/**.cpp",
                 "Common_3/OS/macOS/**.mm"
+            }
+            
+            linksfiles {
+                "Common_3/ThirdParty/OpenSource/assimp/4.1.0/macOS-build"
             }
         
         filter"action:vs*"
@@ -85,7 +89,8 @@ export: |
 
             filter {"system:windows", "kind:not SharedLib or not StaticLib"}
                 postbuildcommands {
-                    string.format("{COPY} \"%s/winpix/bin/WinPixEventRuntime.dll\" \"%%{cfg.buildtarget.directory}\"", zpm.exportpath())
+                    string.format("{COPY} \"%s/winpix/bin/WinPixEventRuntime.dll\" \"%%{cfg.buildtarget.directory}\"", zpm.exportpath()),
+                    string.format("{COPY} \"%s/Common_3/ThirdParty/OpenSource/assimp/4.1.0/assimp.dll\" \"%%{cfg.buildtarget.directory}\"", zpm.exportpath())
                 }
 
             filter {}
