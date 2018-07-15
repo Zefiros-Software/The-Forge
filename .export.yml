@@ -17,8 +17,8 @@ export: |
             "Common_3/Renderer/**.cpp",
             "Common_3/Tools/AssimpImporter/**.cpp",
             "Common_3/ThirdParty/OpenSource/assimp/4.1.0/code/**.cpp",
-            "Common_3/ThirdParty/OpenSource/assimp/4.1.0/contrib/zlib/*.c",
-            "Common_3/ThirdParty/OpenSource/assimp/4.1.0/contrib/unzip/*.c",
+            --"Common_3/ThirdParty/OpenSource/assimp/4.1.0/contrib/zlib/*.c",
+            --"Common_3/ThirdParty/OpenSource/assimp/4.1.0/contrib/unzip/*.c",
             "Common_3/ThirdParty/OpenSource/assimp/4.1.0/contrib/irrXML/**.cpp",
             "Common_3/ThirdParty/OpenSource/assimp/4.1.0/contrib/openddlparser/code/**.cpp",
             "Common_3/ThirdParty/OpenSource/TinyEXR/**.cpp",
@@ -30,7 +30,7 @@ export: |
         
         includedirs {"Common_3/ThirdParty/OpenSource/assimp/4.1.0/",
                      "Common_3/ThirdParty/OpenSource/assimp/4.1.0/include",
-                     "Common_3/ThirdParty/OpenSource/assimp/4.1.0/contrib/zlib/",
+                     --"Common_3/ThirdParty/OpenSource/assimp/4.1.0/contrib/zlib/",
                      "Common_3/ThirdParty/OpenSource/assimp/4.1.0/contrib/irrXML/",
                      "Common_3/ThirdParty/OpenSource/assimp/4.1.0/contrib/openddlparser/include"}
         
