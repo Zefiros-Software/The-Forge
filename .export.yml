@@ -17,6 +17,9 @@ export: |
             "Common_3/Renderer/**.cpp",
             "Common_3/Tools/AssimpImporter/**.cpp",
             "Common_3/ThirdParty/OpenSource/assimp/4.1.0/code/**.cpp",
+            "Common_3/ThirdParty/OpenSource/assimp/4.1.0/contrib/zlib/*.c",
+            "Common_3/ThirdParty/OpenSource/assimp/4.1.0/contrib/irrXML/**.cpp",
+            "Common_3/ThirdParty/OpenSource/assimp/4.1.0/contrib/openddlparser/code/**.cpp",
             "Common_3/ThirdParty/OpenSource/TinyEXR/**.cpp",
             "Common_3/ThirdParty/OpenSource/gainput/lib/**.cpp",
             "Middleware_3/UI/**.cpp",
@@ -24,7 +27,10 @@ export: |
             "Middleware_3/Input/**.cpp"
         }
         
-        includedirs {"Common_3/ThirdParty/OpenSource/assimp/4.1.0/include"}
+        includedirs {"Common_3/ThirdParty/OpenSource/assimp/4.1.0/include",
+                     "Common_3/ThirdParty/OpenSource/assimp/4.1.0/contrib/zlib/",
+                     "Common_3/ThirdParty/OpenSource/assimp/4.1.0/contrib/irrXML/",
+                     "Common_3/ThirdParty/OpenSource/assimp/4.1.0/contrib/openddlparser/include"}
         
         filter "system:windows"        
             files "Common_3/OS/Windows/Windows*.cpp"
